@@ -9,9 +9,7 @@
 #include "ofxEditor.h"
 #include "ofxBeat.h"
 
-#include "ofxSyphon.h"
-
-#include "ofxPostProcessing.h"
+#include "PostProcessing.h"
 #define FX_KALEIDOSCOPE 0
 #define FX_NOISE_WARP 1
 #define FX_PIXELATE 2
@@ -23,23 +21,23 @@
 
 
 class cyrilApp : public ofBaseApp{
-  
-	ofxEditor editor;
+
+  ofxEditor editor;
   ofxBeat beat;
-  
-	//ofxSyphonServer mainOutputSyphonServer;
-	//ofxSyphonClient mClient;
-    
+
+  //ofxSyphonServer mainOutputSyphonServer;
+  //ofxSyphonClient mClient;
+
   ofxOscReceiver receiver;
-  
+
   //ofxXmlSettings settings;
   string fileName;
-  
+
   Cyril *prog[10];
-  Poco::Timestamp modTimes[10];
+  //Poco::Timestamp modTimes[10];
   bool running[10];
   bool error[10];
-  
+
   CyrilState _state;
   vector<string> progFiles;
   int currentProg;
@@ -49,7 +47,7 @@ class cyrilApp : public ofBaseApp{
 
   bool lightsOn;
   bool fxOn;
-  
+
   bool autoClearBg;
   bool pauseProg;
   bool runningProg;
@@ -59,15 +57,15 @@ class cyrilApp : public ofBaseApp{
   bool isFullScreen;
   bool doResetTimers;
   bool isOrtho;
-  
+
   int lastSignalReport;
-  
+
   void initPPFx();
-  
+
 public:
-  
+
   cyrilApp(): editor(10, "../Resources/DroidSansMono.ttf") {}
-  
+
   void setup();
   void update();
   void draw();
@@ -84,11 +82,11 @@ public:
   void applyGlobalSettings();
   void reloadSettings();
   void runProgram();
-  
+
   void audioReceived(float*, int, int);
-  
+
   void reloadFileBuffer(std::string);
-  
+
   // Editor command callbacks
   static void toggleFx(void *);
   static void toggleFullscreen(void *);
@@ -101,8 +99,8 @@ public:
   static void resetTimers(void *);
   static void pauseProgram(void *);
   static void runScript(void *);
-    void toggleScript(int i, bool r);
-  
+  void toggleScript(int i, bool r);
+
 
 };
 

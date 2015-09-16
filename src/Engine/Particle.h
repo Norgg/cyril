@@ -24,12 +24,11 @@ public:
   float decay;
     Cyril* shape;
     CyrilState _sub_state;
-  
+
   Particle (ofMatrix4x4 _o, ofVec3f _v, ofVec3f _a, float _h, float _d, Cyril* _s) :
   origin(_o), velocity(_v), acceleration(_a), health(_h), decay(_d), shape(_s) {
-      
       _sub_state.stk = new stack<float>;
-      _sub_state.ms = new ofMatrixStack(*ofGetWindowPtr());
+      _sub_state.ms = new ofMatrixStack(ofGetWindowPtr());
       _sub_state.ps = new vector<Particle*>;
       _sub_state.sym = new map<int, float>;
       _sub_state.cs = new map<int, Palette *>;

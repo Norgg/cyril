@@ -3,3 +3,4 @@ ofxOsc
 ofxXmlSettings
 ofxBeat
 ofxEditor
+ofxPostProcessing

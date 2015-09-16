@@ -56,6 +56,7 @@ void CyrilPixelate::eval(CyrilState &_s) {
     width = 100;
     height = 100;
   }
-  _s.pixelate->setResolution(width, height);
+  _s.pixelate->resolution.x = width;
+  _s.pixelate->resolution.y = height;
 }
 

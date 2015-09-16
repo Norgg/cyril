@@ -50,7 +50,7 @@ void CyrilBloom::eval(CyrilState &_s) {
   }
   if (bloom != prevBloom) {
     prevBloom = bloom;
-    _s.bloom->setIncrements(bloom, 0, 0, bloom);
+    // _s.bloom->setIncrements(bloom, 0, 0, bloom);
   }
 }
 
